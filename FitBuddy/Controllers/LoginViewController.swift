@@ -98,14 +98,10 @@ extension LoginViewController : AVCaptureMetadataOutputObjectsDelegate {
             if metadataObj.stringValue != nil {
                 captureSession?.stopRunning()
 
-                room = metadataObj.stringValue!
-                let userName = UserDefaults.standard.object(forKey: "userName") as? String
-                print("username: " + userName! + " - " + room!)
-
                 statusLabel.text = "QR Code Found!"
 
-                print(metadataObj.stringValue!)
-
+                room = metadataObj.stringValue!
+                
                 performSegue(withIdentifier: "segueToExerciseVC", sender: self)
             }
         }

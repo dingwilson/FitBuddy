@@ -10,5 +10,6 @@ target 'FitBuddy' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'PKHUD'
+  pod 'SRCountdownTimer'
 
 end

@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import SRCountdownTimer
 import FirebaseDatabase
 
 class ExerciseViewController: UIViewController, PredictionManagerDelegate {
 
     @IBOutlet weak var repetitionLbl: UILabel!
     @IBOutlet weak var exerciseLbl: UILabel!
+
+    @IBOutlet weak var countdownTimer: SRCountdownTimer!
+    
+    @IBOutlet weak var setupCountdown: UILabel!
+    
+    var timer: Timer?
+    var seconds = 3
 
     var room : String?
     var ref: DatabaseReference = Database.database().reference()
@@ -27,27 +35,54 @@ class ExerciseViewController: UIViewController, PredictionManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         initUserInRoom(roomName: room!)
+
         _predictionManager = PredictionManager(delegate: self)
+
+        setupCountdownTimer()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        _predictionManager.startPrediction()
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateSetupTimer), userInfo: nil, repeats: true)
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
+        timer?.invalidate()
+
         _predictionManager.stopPrediction()
+    }
+
+    @objc func updateSetupTimer() {
+        setupCountdown.text = "\(seconds)"
+
+        if seconds == 0 {
+            timer?.invalidate()
+            _predictionManager.startPrediction()
+            setupCountdown.isHidden = true
+            countdownTimer.start(beginingValue: 30, interval: 1)
+        } else {
+            seconds -= 1
+        }
+    }
+
+    func setupCountdownTimer() {
+        countdownTimer.lineWidth = 20.0
+        countdownTimer.lineColor = .blue
+        countdownTimer.trailLineColor = UIColor.lightGray.withAlphaComponent(0.5)
+        countdownTimer.labelFont = UIFont(name: "HelveticaNeue-Bold", size: 80)!
+        countdownTimer.timerFinishingText = "End"
     }
     
     func initUserInRoom(roomName: String) {
         let userName = UserDefaults.standard.object(forKey: "userName") as? String
         if (roomName.contains("private")) {
             print("Private")
-            let user = ["name": userName,
+            let user = ["name": userName as Any,
                         "Burpee": 0,
                         "Situp": 0,
                         "Squat": 0] as [String : Any]
@@ -57,7 +92,7 @@ class ExerciseViewController: UIViewController, PredictionManagerDelegate {
         } else if (roomName.contains("random")) {
             
             ref.child("random-rooms").observeSingleEvent(of: .value, with: { (snapshot) in
-                let user = ["name": userName,
+                let user = ["name": userName as Any,
                             "Burpee": 0,
                             "Situp": 0,
                             "Squat": 0] as [String : Any]
@@ -75,7 +110,7 @@ class ExerciseViewController: UIViewController, PredictionManagerDelegate {
             })
         } else {
             ref.child("custom-rooms").observeSingleEvent(of: .value, with: { (snapshot) in
-                let user = ["name": userName,
+                let user = ["name": userName as Any,
                             "Burpee": 0,
                             "Situp": 0,
                             "Squat": 0] as [String : Any]
@@ -95,7 +130,6 @@ class ExerciseViewController: UIViewController, PredictionManagerDelegate {
     }
         
     func didDetectRepetition(exercise: PREDICTION_MODEL_EXERCISES) {
-        
         var updateValue = 1;
         if workoutStats[exercise.rawValue] == nil {
             workoutStats[exercise.rawValue] = updateValue;
@@ -107,25 +141,32 @@ class ExerciseViewController: UIViewController, PredictionManagerDelegate {
         let childUpdates = [ "\(self.updatePath)/\(exercise.rawValue)" : updateValue]
         ref.updateChildValues(childUpdates)
 
-//        if exercise.rawValue != exerciseLbl.text {
-//            exerciseLbl.text = exercise.rawValue
-//            repetitionLbl.text = "1"
-//        } else {
-//            if let curRepStr = repetitionLbl.text {
-//                if let curRep = Int(curRepStr) {
-//                    repetitionLbl.text = String(curRep + 1)
-//                }
-//            }
-//        }
+        if exercise.rawValue != exerciseLbl.text {
+            exerciseLbl.text = exercise.rawValue
+            repetitionLbl.text = "1"
+        } else {
+            if let curRepStr = repetitionLbl.text {
+                if let curRep = Int(curRepStr) {
+                    repetitionLbl.text = String(curRep + 1)
+                }
+            }
+        }
     }
 
     func didDetectSetBreak() {
-        exerciseLbl.text = "Set Break"
-        repetitionLbl.text = "-"
+//        exerciseLbl.text = "Set Break"
+//        repetitionLbl.text = "-"
     }
 
     func didChangeStatus(predictionManagerState: PredictionManagerState) {
-        print(predictionManagerState.rawValue)
+        // print(predictionManagerState.rawValue)
     }
 
+}
+
+extension ExerciseViewController: SRCountdownTimerDelegate {
+    func timerDidEnd() {
+        _predictionManager.stopPrediction()
+        performSegue(withIdentifier: "unwindToVC", sender: self)
+    }
 }
