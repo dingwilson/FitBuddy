@@ -12,7 +12,8 @@ import AVFoundation
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var previewView: UIView!
-
+    @IBOutlet weak var statusLabel: UILabel!
+    
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
@@ -86,6 +87,8 @@ extension LoginViewController : AVCaptureMetadataOutputObjectsDelegate {
 
             if metadataObj.stringValue != nil {
                 captureSession?.stopRunning()
+
+                statusLabel.text = "QR Code Found!"
 
                 print(metadataObj.stringValue!)
 
