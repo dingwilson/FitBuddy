@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+
+    var ref: DatabaseReference = Database.database().reference()
+
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +68,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         UserDefaults.standard.set(userName, forKey: "userName")
         UserDefaults.standard.set(password, forKey: "password")
 
-        // FIREBASE TODO: send userName and password to backend
+        let user = ["username": userName,
+                    "password": password,
+                    "totalBurpees": 0,
+                    "totalSitups": 0,
+                    "totalSquats": 0,
+                    "history": "[]"] as [String : Any]
+        let childUpdates = ["users/\(userName)": user]
+        ref.updateChildValues(childUpdates)
     }
 }

@@ -15,6 +15,10 @@ class ExerciseViewController: UIViewController, PredictionManagerDelegate {
 
     private var _predictionManager: PredictionManager!
 
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
