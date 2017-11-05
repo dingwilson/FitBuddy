@@ -10,6 +10,8 @@ import UIKit
 import PKHUD
 import SRCountdownTimer
 import FirebaseDatabase
+import AudioToolbox
+import AVFoundation
 
 class ExerciseViewController: UIViewController, PredictionManagerDelegate {
 
@@ -21,7 +23,7 @@ class ExerciseViewController: UIViewController, PredictionManagerDelegate {
     @IBOutlet weak var setupCountdown: UILabel!
     
     var timer: Timer?
-    var seconds = 3
+    var seconds = 10
 
     var room : String?
     var ref: DatabaseReference = Database.database().reference()
@@ -29,6 +31,7 @@ class ExerciseViewController: UIViewController, PredictionManagerDelegate {
     var updatePath: String = ""
 
     private var _predictionManager: PredictionManager!
+    private let _speechSynthesizer = AVSpeechSynthesizer()
 
     override var prefersStatusBarHidden: Bool {
         return true
@@ -133,6 +136,10 @@ class ExerciseViewController: UIViewController, PredictionManagerDelegate {
     }
         
     func didDetectRepetition(exercise: PREDICTION_MODEL_EXERCISES) {
+        let speechUtterance = AVSpeechUtterance(string: exercise.rawValue)
+        speechUtterance.rate = 0.4
+        _speechSynthesizer.speak(speechUtterance)
+
         var updateValue = 1;
         if workoutStats[exercise.rawValue] == nil {
             workoutStats[exercise.rawValue] = updateValue;
@@ -167,6 +174,7 @@ class ExerciseViewController: UIViewController, PredictionManagerDelegate {
 extension ExerciseViewController: SRCountdownTimerDelegate {
     func timerDidEnd() {
         HUD.flash(.success, delay: 2.0)
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         _predictionManager.stopPrediction()
         performSegue(withIdentifier: "unwindToVC", sender: self)
     }
