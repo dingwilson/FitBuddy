@@ -12,7 +12,8 @@ import AVFoundation
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var previewView: UIView!
-
+    @IBOutlet weak var statusLabel: UILabel!
+    
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
@@ -100,6 +101,10 @@ extension LoginViewController : AVCaptureMetadataOutputObjectsDelegate {
                 room = metadataObj.stringValue!
                 let userName = UserDefaults.standard.object(forKey: "userName") as? String
                 print("username: " + userName! + " - " + room!)
+
+                statusLabel.text = "QR Code Found!"
+
+                print(metadataObj.stringValue!)
 
                 performSegue(withIdentifier: "segueToExerciseVC", sender: self)
             }
