@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>&quot;FitBuddy requires usage of the camera to find the QR code from the website.&quot;</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Montserrat</string>

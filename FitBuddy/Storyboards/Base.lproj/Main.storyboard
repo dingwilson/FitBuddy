@@ -141,7 +141,7 @@
                                 <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="50"/>
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Q9b-Gy-6g3">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Q9b-Gy-6g3">
                                 <rect key="frame" x="16" y="306" width="343" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="M4m-QP-ORW"/>
@@ -216,14 +216,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1j3-AM-y0i">
-                                <rect key="frame" x="64" y="20" width="246" height="67"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="42"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8a2-dX-dWQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wS1-BH-gMU">
-                                <rect key="frame" x="16" y="38" width="46" height="30"/>
+                                <rect key="frame" x="16" y="38" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="didPressBackButton:" destination="dD1-DU-zf7" eventType="touchUpInside" id="eYI-vz-Ag2"/>
@@ -234,18 +233,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wS1-BH-gMU" firstAttribute="leading" secondItem="4Kc-PW-pY5" secondAttribute="leadingMargin" id="9F9-O4-y8L"/>
-                            <constraint firstItem="glH-Pm-r0Q" firstAttribute="trailing" secondItem="1j3-AM-y0i" secondAttribute="trailing" constant="65" id="JYS-nZ-RKG"/>
-                            <constraint firstItem="1j3-AM-y0i" firstAttribute="top" secondItem="glH-Pm-r0Q" secondAttribute="top" id="VDu-oJ-XNQ"/>
                             <constraint firstItem="wS1-BH-gMU" firstAttribute="top" secondItem="glH-Pm-r0Q" secondAttribute="top" constant="18" id="VM8-Ri-SdZ"/>
-                            <constraint firstItem="wS1-BH-gMU" firstAttribute="centerY" secondItem="1j3-AM-y0i" secondAttribute="centerY" id="bKU-Cp-Jdl"/>
-                            <constraint firstItem="1j3-AM-y0i" firstAttribute="leading" secondItem="wS1-BH-gMU" secondAttribute="trailing" constant="2" id="eCF-e1-gQY"/>
-                            <constraint firstItem="1j3-AM-y0i" firstAttribute="centerX" secondItem="4Kc-PW-pY5" secondAttribute="centerX" id="sSh-Po-05X"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="glH-Pm-r0Q"/>
                     </view>
+                    <connections>
+                        <outlet property="previewView" destination="8a2-dX-dWQ" id="Fu8-ck-cat"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1406" y="-343"/>
+            <point key="canvasLocation" x="1405.5999999999999" y="-343.17841079460271"/>
         </scene>
     </scenes>
 </document>
