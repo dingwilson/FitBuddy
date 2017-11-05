@@ -137,7 +137,7 @@ class ExerciseViewController: UIViewController, PredictionManagerDelegate {
         
     func didDetectRepetition(exercise: PREDICTION_MODEL_EXERCISES) {
         let speechUtterance = AVSpeechUtterance(string: exercise.rawValue)
-        speechUtterance.rate = 0.4
+        speechUtterance.rate = 0.5
         _speechSynthesizer.speak(speechUtterance)
 
         var updateValue = 1;
@@ -172,7 +172,17 @@ class ExerciseViewController: UIViewController, PredictionManagerDelegate {
 }
 
 extension ExerciseViewController: SRCountdownTimerDelegate {
+    func timerDidStart() {
+        let speechUtterance = AVSpeechUtterance(string: "Time starts now.")
+        speechUtterance.rate = 0.5
+        _speechSynthesizer.speak(speechUtterance)
+    }
+
     func timerDidEnd() {
+        let speechUtterance = AVSpeechUtterance(string: "Time is up.")
+        speechUtterance.rate = 0.5
+        _speechSynthesizer.speak(speechUtterance)
+
         HUD.flash(.success, delay: 2.0)
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         _predictionManager.stopPrediction()
