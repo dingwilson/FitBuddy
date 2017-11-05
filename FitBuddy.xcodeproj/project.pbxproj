@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48F90D129DADE777EF481F98 /* Pods_FitBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AFA4829E192B16E5DAAEF9 /* Pods_FitBuddy.framework */; };
 		C8874E1D1FAEA1DE008A80C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8874E1C1FAEA1DE008A80C8 /* AppDelegate.swift */; };
 		C8874E221FAEA1DE008A80C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8874E201FAEA1DE008A80C8 /* Main.storyboard */; };
 		C8874E241FAEA1DE008A80C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8874E231FAEA1DE008A80C8 /* Assets.xcassets */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F0A8EB03D5FAFDC80627B6E /* Pods-FitBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitBuddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitBuddy/Pods-FitBuddy.debug.xcconfig"; sourceTree = "<group>"; };
+		38C857F76E2CF19BC1370F14 /* Pods-FitBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitBuddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitBuddy/Pods-FitBuddy.release.xcconfig"; sourceTree = "<group>"; };
+		42AFA4829E192B16E5DAAEF9 /* Pods_FitBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8874E191FAEA1DE008A80C8 /* FitBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8874E1C1FAEA1DE008A80C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8874E211FAEA1DE008A80C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48F90D129DADE777EF481F98 /* Pods_FitBuddy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71953881F6B6888CD56E47DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42AFA4829E192B16E5DAAEF9 /* Pods_FitBuddy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		835D53DA008BAC576BB4AC9B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F0A8EB03D5FAFDC80627B6E /* Pods-FitBuddy.debug.xcconfig */,
+				38C857F76E2CF19BC1370F14 /* Pods-FitBuddy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C8874E101FAEA1DD008A80C8 = {
 			isa = PBXGroup;
 			children = (
 				C8874E1B1FAEA1DE008A80C8 /* FitBuddy */,
 				C8874E1A1FAEA1DE008A80C8 /* Products */,
+				835D53DA008BAC576BB4AC9B /* Pods */,
+				71953881F6B6888CD56E47DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,9 +127,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8874E2B1FAEA1DE008A80C8 /* Build configuration list for PBXNativeTarget "FitBuddy" */;
 			buildPhases = (
+				0763A693BC46B4348BCA1147 /* [CP] Check Pods Manifest.lock */,
 				C8874E151FAEA1DE008A80C8 /* Sources */,
 				C8874E161FAEA1DE008A80C8 /* Frameworks */,
 				C8874E171FAEA1DE008A80C8 /* Resources */,
+				426507E663173C0833734CF3 /* [CP] Embed Pods Frameworks */,
+				C6CC7BAB4BE5DC39152D7B0A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -162,6 +189,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0763A693BC46B4348BCA1147 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FitBuddy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		426507E663173C0833734CF3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FitBuddy/Pods-FitBuddy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftVideoBackground/SwiftVideoBackground.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftVideoBackground.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FitBuddy/Pods-FitBuddy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6CC7BAB4BE5DC39152D7B0A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FitBuddy/Pods-FitBuddy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C8874E151FAEA1DE008A80C8 /* Sources */ = {
@@ -304,6 +385,7 @@
 		};
 		C8874E2C1FAEA1DE008A80C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F0A8EB03D5FAFDC80627B6E /* Pods-FitBuddy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -320,6 +402,7 @@
 		};
 		C8874E2D1FAEA1DE008A80C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38C857F76E2CF19BC1370F14 /* Pods-FitBuddy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
