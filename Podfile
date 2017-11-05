@@ -7,5 +7,7 @@ target 'FitBuddy' do
 
   # Pods for FitBuddy
   pod 'SwiftVideoBackground'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
 
 end

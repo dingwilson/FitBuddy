@@ -18,6 +18,13 @@
 		C89D8A921FAEAE5400CD9E41 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D8A911FAEAE5400CD9E41 /* SignUpViewController.swift */; };
 		C89D8A941FAEAFF100CD9E41 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D8A931FAEAFF100CD9E41 /* LoginViewController.swift */; };
 		C89D8A981FAEBD4A00CD9E41 /* UIViewController+AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D8A971FAEBD4A00CD9E41 /* UIViewController+AlertView.swift */; };
+		C89D8A9A1FAECB5100CD9E41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C89D8A991FAECB5000CD9E41 /* GoogleService-Info.plist */; };
+		C89D8A9C1FAECD7800CD9E41 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D8A9B1FAECD7800CD9E41 /* ExerciseViewController.swift */; };
+		C89D8A9E1FAED22800CD9E41 /* Exermote.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C89D8A9D1FAED22800CD9E41 /* Exermote.mlmodel */; };
+		C89D8AA31FAED24900CD9E41 /* PredictionManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D8AA01FAED24800CD9E41 /* PredictionManagerDelegate.swift */; };
+		C89D8AA41FAED24900CD9E41 /* PredictionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D8AA11FAED24800CD9E41 /* PredictionManager.swift */; };
+		C89D8AA51FAED24900CD9E41 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D8AA21FAED24900CD9E41 /* MotionManager.swift */; };
+		C89D8AA81FAED2B000CD9E41 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D8AA71FAED2B000CD9E41 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +43,13 @@
 		C89D8A911FAEAE5400CD9E41 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C89D8A931FAEAFF100CD9E41 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C89D8A971FAEBD4A00CD9E41 /* UIViewController+AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AlertView.swift"; sourceTree = "<group>"; };
+		C89D8A991FAECB5000CD9E41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C89D8A9B1FAECD7800CD9E41 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
+		C89D8A9D1FAED22800CD9E41 /* Exermote.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Exermote.mlmodel; sourceTree = "<group>"; };
+		C89D8AA01FAED24800CD9E41 /* PredictionManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionManagerDelegate.swift; sourceTree = "<group>"; };
+		C89D8AA11FAED24800CD9E41 /* PredictionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionManager.swift; sourceTree = "<group>"; };
+		C89D8AA21FAED24900CD9E41 /* MotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
+		C89D8AA71FAED2B000CD9E41 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +104,9 @@
 			children = (
 				C8874E2E1FAEA2A7008A80C8 /* Controllers */,
 				C8874E2F1FAEA2B4008A80C8 /* Models */,
+				C89D8A9F1FAED23300CD9E41 /* Services */,
 				C8874E301FAEA2BA008A80C8 /* Storyboards */,
+				C89D8AA61FAED2A000CD9E41 /* Utilities */,
 				C89D8A961FAEBD3600CD9E41 /* Extensions */,
 				C8874E311FAEA2CE008A80C8 /* Supporting Files */,
 			);
@@ -103,6 +119,7 @@
 				C8874E321FAEA30C008A80C8 /* SplashViewController.swift */,
 				C89D8A911FAEAE5400CD9E41 /* SignUpViewController.swift */,
 				C89D8A931FAEAFF100CD9E41 /* LoginViewController.swift */,
+				C89D8A9B1FAECD7800CD9E41 /* ExerciseViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -110,6 +127,7 @@
 		C8874E2F1FAEA2B4008A80C8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C89D8A9D1FAED22800CD9E41 /* Exermote.mlmodel */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -131,6 +149,7 @@
 				C8874E1C1FAEA1DE008A80C8 /* AppDelegate.swift */,
 				C8874E231FAEA1DE008A80C8 /* Assets.xcassets */,
 				C8874E281FAEA1DE008A80C8 /* Info.plist */,
+				C89D8A991FAECB5000CD9E41 /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -141,6 +160,24 @@
 				C89D8A971FAEBD4A00CD9E41 /* UIViewController+AlertView.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C89D8A9F1FAED23300CD9E41 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C89D8AA21FAED24900CD9E41 /* MotionManager.swift */,
+				C89D8AA11FAED24800CD9E41 /* PredictionManager.swift */,
+				C89D8AA01FAED24800CD9E41 /* PredictionManagerDelegate.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C89D8AA61FAED2A000CD9E41 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C89D8AA71FAED2B000CD9E41 /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +247,7 @@
 				C89D8A8E1FAEA57900CD9E41 /* Background.mp4 in Resources */,
 				C8874E241FAEA1DE008A80C8 /* Assets.xcassets in Resources */,
 				C8874E221FAEA1DE008A80C8 /* Main.storyboard in Resources */,
+				C89D8A9A1FAECB5100CD9E41 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,11 +279,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FitBuddy/Pods-FitBuddy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftVideoBackground/SwiftVideoBackground.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftVideoBackground.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -275,9 +319,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C89D8A941FAEAFF100CD9E41 /* LoginViewController.swift in Sources */,
+				C89D8AA81FAED2B000CD9E41 /* Constants.swift in Sources */,
+				C89D8AA51FAED24900CD9E41 /* MotionManager.swift in Sources */,
+				C89D8AA31FAED24900CD9E41 /* PredictionManagerDelegate.swift in Sources */,
+				C89D8AA41FAED24900CD9E41 /* PredictionManager.swift in Sources */,
 				C89D8A921FAEAE5400CD9E41 /* SignUpViewController.swift in Sources */,
 				C89D8A981FAEBD4A00CD9E41 /* UIViewController+AlertView.swift in Sources */,
 				C8874E1D1FAEA1DE008A80C8 /* AppDelegate.swift in Sources */,
+				C89D8A9C1FAECD7800CD9E41 /* ExerciseViewController.swift in Sources */,
+				C89D8A9E1FAED22800CD9E41 /* Exermote.mlmodel in Sources */,
 				C8874E331FAEA30C008A80C8 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,7 +474,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wilsonding.FitBuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -441,7 +491,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wilsonding.FitBuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

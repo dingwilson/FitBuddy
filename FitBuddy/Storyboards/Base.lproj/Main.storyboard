@@ -239,10 +239,56 @@
                     </view>
                     <connections>
                         <outlet property="previewView" destination="8a2-dX-dWQ" id="Fu8-ck-cat"/>
+                        <segue destination="7b6-af-UGF" kind="show" identifier="segueToExerciseVC" id="hTH-Ep-3ao"/>
                     </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1405.5999999999999" y="-343.17841079460271"/>
+        </scene>
+        <!--Exercise View Controller-->
+        <scene sceneID="qiy-Se-dgC">
+            <objects>
+                <viewController id="7b6-af-UGF" customClass="ExerciseViewController" customModule="FitBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JqI-FM-BCp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hU-QH-g4r">
+                                <rect key="frame" x="16" y="147" width="343" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="nUR-Oe-RSI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2U3-0Z-giY">
+                                <rect key="frame" x="16" y="200" width="343" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2hU-QH-g4r" firstAttribute="leading" secondItem="2U3-0Z-giY" secondAttribute="leading" id="FfF-VG-0gK"/>
+                            <constraint firstItem="2hU-QH-g4r" firstAttribute="trailing" secondItem="JqI-FM-BCp" secondAttribute="trailingMargin" id="QSk-rI-Owx"/>
+                            <constraint firstItem="2hU-QH-g4r" firstAttribute="leading" secondItem="JqI-FM-BCp" secondAttribute="leadingMargin" id="YZR-fb-GJ7"/>
+                            <constraint firstItem="D2h-79-wxM" firstAttribute="bottom" secondItem="2U3-0Z-giY" secondAttribute="bottom" constant="422" id="bMr-LC-d61"/>
+                            <constraint firstItem="2hU-QH-g4r" firstAttribute="top" secondItem="D2h-79-wxM" secondAttribute="top" constant="127" id="jPM-KD-b75"/>
+                            <constraint firstItem="2U3-0Z-giY" firstAttribute="top" secondItem="2hU-QH-g4r" secondAttribute="bottom" constant="8" symbolic="YES" id="t9i-NN-xJQ"/>
+                            <constraint firstItem="2hU-QH-g4r" firstAttribute="trailing" secondItem="2U3-0Z-giY" secondAttribute="trailing" id="xjC-Sb-jDe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="D2h-79-wxM"/>
+                    </view>
+                    <connections>
+                        <outlet property="exerciseLbl" destination="2U3-0Z-giY" id="3MK-mf-zLf"/>
+                        <outlet property="repetitionLbl" destination="2hU-QH-g4r" id="BzS-ff-Yyi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bN4-wF-VWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2728.8000000000002" y="-343.17841079460271"/>
         </scene>
     </scenes>
 </document>
