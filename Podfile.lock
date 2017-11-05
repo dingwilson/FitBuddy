@@ -27,11 +27,13 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - PKHUD (5.0.0)
   - SwiftVideoBackground (1.0.1)
 
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
+  - PKHUD
   - SwiftVideoBackground
 
 SPEC CHECKSUMS:
@@ -43,8 +45,9 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   leveldb-library: 44ef425bfde64f5b41daef86b38db2d13edbbee1
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
   SwiftVideoBackground: 554a3b235cec484955e86a00a625a4df86aea5cb
 
-PODFILE CHECKSUM: 9b0a61c471ce2216d83afd9a7fb12c01bb76ae24
+PODFILE CHECKSUM: 1de3c997a7ea3ea9fe428d36d45ef449fc3627a3
 
 COCOAPODS: 1.3.1

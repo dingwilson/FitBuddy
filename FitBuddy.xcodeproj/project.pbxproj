@@ -25,6 +25,7 @@
 		C89D8AA41FAED24900CD9E41 /* PredictionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D8AA11FAED24800CD9E41 /* PredictionManager.swift */; };
 		C89D8AA51FAED24900CD9E41 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D8AA21FAED24900CD9E41 /* MotionManager.swift */; };
 		C89D8AA81FAED2B000CD9E41 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D8AA71FAED2B000CD9E41 /* Constants.swift */; };
+		C89D8AAC1FAF1CB500CD9E41 /* NSMutableAttributedString+Bold.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D8AAB1FAF1CB500CD9E41 /* NSMutableAttributedString+Bold.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		C89D8AA11FAED24800CD9E41 /* PredictionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionManager.swift; sourceTree = "<group>"; };
 		C89D8AA21FAED24900CD9E41 /* MotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 		C89D8AA71FAED2B000CD9E41 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C89D8AAB1FAF1CB500CD9E41 /* NSMutableAttributedString+Bold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Bold.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 		C89D8A961FAEBD3600CD9E41 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C89D8AAB1FAF1CB500CD9E41 /* NSMutableAttributedString+Bold.swift */,
 				C89D8A971FAEBD4A00CD9E41 /* UIViewController+AlertView.swift */,
 			);
 			path = Extensions;
@@ -280,6 +283,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FitBuddy/Pods-FitBuddy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftVideoBackground/SwiftVideoBackground.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -287,6 +291,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftVideoBackground.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -327,6 +332,7 @@
 				C89D8A981FAEBD4A00CD9E41 /* UIViewController+AlertView.swift in Sources */,
 				C8874E1D1FAEA1DE008A80C8 /* AppDelegate.swift in Sources */,
 				C89D8A9C1FAECD7800CD9E41 /* ExerciseViewController.swift in Sources */,
+				C89D8AAC1FAF1CB500CD9E41 /* NSMutableAttributedString+Bold.swift in Sources */,
 				C89D8A9E1FAED22800CD9E41 /* Exermote.mlmodel in Sources */,
 				C8874E331FAEA30C008A80C8 /* SplashViewController.swift in Sources */,
 			);

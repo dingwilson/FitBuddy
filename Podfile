@@ -9,5 +9,6 @@ target 'FitBuddy' do
   pod 'SwiftVideoBackground'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'PKHUD'
 
 end

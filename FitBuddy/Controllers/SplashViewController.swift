@@ -11,6 +11,7 @@ import SwiftVideoBackground
 
 class SplashViewController: UIViewController {
 
+    @IBOutlet weak var titleTextLabel: UILabel!
     @IBOutlet weak var backgroundVideo: BackgroundVideo!
 
     override var prefersStatusBarHidden: Bool {
@@ -20,7 +21,14 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        backgroundVideo.createBackgroundVideo(name: "Background", type: "mp4", alpha: 0.15)
+        backgroundVideo.createBackgroundVideo(name: "Background", type: "mp4", alpha: 0.10)
+
+        let formattedString = NSMutableAttributedString()
+        formattedString
+            .bold("Fit")
+            .normal("Buddy")
+
+        titleTextLabel.attributedText = formattedString
     }
 
     @IBAction func didPressLoginButton(_ sender: Any) {

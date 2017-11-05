@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 import FirebaseDatabase
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
@@ -49,10 +50,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func didPressSubmitButton(_ sender: Any) {
+        HUD.show(.progress)
+
         guard
             let userName = userNameTextField.text,
             !userName.isEmpty
         else {
+            HUD.flash(.error, delay: 1.0)
             alertView(withTitle: "Error", message: "Username field is empty or invalid.")
             return
         }
@@ -61,6 +65,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             let password = passwordTextField.text,
             !password.isEmpty
         else {
+            HUD.flash(.error, delay: 1.0)
             alertView(withTitle: "Error", message: "Password field is empty or invalid.")
             return
         }
@@ -76,5 +81,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     "history": "[]"] as [String : Any]
         let childUpdates = ["users/\(userName)": user]
         ref.updateChildValues(childUpdates)
+
+        HUD.flash(.success, delay: 1.0)
+        performSegue(withIdentifier: "unwindToVC", sender: self)
     }
 }

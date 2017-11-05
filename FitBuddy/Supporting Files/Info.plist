@@ -21,7 +21,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>"FitBuddy requires usage of the camera to find the QR code from the website."</string>
+	<string>&quot;FitBuddy requires usage of the camera to find the QR code from the website.&quot;</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Montserrat</string>
