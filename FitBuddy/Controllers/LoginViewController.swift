@@ -62,6 +62,16 @@ class LoginViewController: UIViewController {
         }
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        qrCodeFrameView?.frame = CGRect.zero
+
+        captureSession?.startRunning()
+
+        statusLabel?.text = "Searching for QR Code..."
+    }
+
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
@@ -79,6 +89,8 @@ class LoginViewController: UIViewController {
             destinationViewController.room = room
         }
     }
+
+    @IBAction func unwindToVC(segue:UIStoryboardSegue) { }
 }
 
 extension LoginViewController : AVCaptureMetadataOutputObjectsDelegate {

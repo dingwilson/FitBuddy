@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 import SRCountdownTimer
 import FirebaseDatabase
 
@@ -35,6 +36,8 @@ class ExerciseViewController: UIViewController, PredictionManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        countdownTimer.delegate = self
 
         initUserInRoom(roomName: room!)
 
@@ -154,18 +157,16 @@ class ExerciseViewController: UIViewController, PredictionManagerDelegate {
     }
 
     func didDetectSetBreak() {
-//        exerciseLbl.text = "Set Break"
-//        repetitionLbl.text = "-"
     }
 
     func didChangeStatus(predictionManagerState: PredictionManagerState) {
-        // print(predictionManagerState.rawValue)
     }
 
 }
 
 extension ExerciseViewController: SRCountdownTimerDelegate {
     func timerDidEnd() {
+        HUD.flash(.success, delay: 2.0)
         _predictionManager.stopPrediction()
         performSegue(withIdentifier: "unwindToVC", sender: self)
     }
