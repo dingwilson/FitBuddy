@@ -7,29 +7,35 @@
 //
 
 import UIKit
+import SwiftVideoBackground
 
 class SplashViewController: UIViewController {
+
+    @IBOutlet weak var backgroundVideo: BackgroundVideo!
+
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        backgroundVideo.createBackgroundVideo(name: "Background", type: "mp4", alpha: 0.15)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func didPressLoginButton(_ sender: Any) {
+        guard
+            let userName = UserDefaults.standard.object(forKey: "userName") as? String,
+            let password = UserDefaults.standard.object(forKey: "password") as? String,
+            !userName.isEmpty,
+            !password.isEmpty
+        else {
+            alertView(withTitle: "Error", message: "You are not signed up. Please sign up first!")
+            return
+        }
+
+        performSegue(withIdentifier: "segueToLogin", sender: self)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    @IBAction func unwindToVC(segue:UIStoryboardSegue) { }
 }

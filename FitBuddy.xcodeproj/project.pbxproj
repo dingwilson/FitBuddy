@@ -13,6 +13,11 @@
 		C8874E241FAEA1DE008A80C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8874E231FAEA1DE008A80C8 /* Assets.xcassets */; };
 		C8874E271FAEA1DE008A80C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8874E251FAEA1DE008A80C8 /* LaunchScreen.storyboard */; };
 		C8874E331FAEA30C008A80C8 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8874E321FAEA30C008A80C8 /* SplashViewController.swift */; };
+		C89D8A8E1FAEA57900CD9E41 /* Background.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C89D8A8D1FAEA57800CD9E41 /* Background.mp4 */; };
+		C89D8A901FAEA93200CD9E41 /* Montserrat in Resources */ = {isa = PBXBuildFile; fileRef = C89D8A8F1FAEA93200CD9E41 /* Montserrat */; };
+		C89D8A921FAEAE5400CD9E41 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D8A911FAEAE5400CD9E41 /* SignUpViewController.swift */; };
+		C89D8A941FAEAFF100CD9E41 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D8A931FAEAFF100CD9E41 /* LoginViewController.swift */; };
+		C89D8A981FAEBD4A00CD9E41 /* UIViewController+AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D8A971FAEBD4A00CD9E41 /* UIViewController+AlertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		C8874E261FAEA1DE008A80C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8874E281FAEA1DE008A80C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8874E321FAEA30C008A80C8 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		C89D8A8D1FAEA57800CD9E41 /* Background.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Background.mp4; sourceTree = "<group>"; };
+		C89D8A8F1FAEA93200CD9E41 /* Montserrat */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Montserrat; path = "Assets/ Fonts/Montserrat"; sourceTree = SOURCE_ROOT; };
+		C89D8A911FAEAE5400CD9E41 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		C89D8A931FAEAFF100CD9E41 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C89D8A971FAEBD4A00CD9E41 /* UIViewController+AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AlertView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +91,7 @@
 				C8874E2E1FAEA2A7008A80C8 /* Controllers */,
 				C8874E2F1FAEA2B4008A80C8 /* Models */,
 				C8874E301FAEA2BA008A80C8 /* Storyboards */,
+				C89D8A961FAEBD3600CD9E41 /* Extensions */,
 				C8874E311FAEA2CE008A80C8 /* Supporting Files */,
 			);
 			path = FitBuddy;
@@ -90,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				C8874E321FAEA30C008A80C8 /* SplashViewController.swift */,
+				C89D8A911FAEAE5400CD9E41 /* SignUpViewController.swift */,
+				C89D8A931FAEAFF100CD9E41 /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -113,11 +126,21 @@
 		C8874E311FAEA2CE008A80C8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C89D8A8F1FAEA93200CD9E41 /* Montserrat */,
+				C89D8A8D1FAEA57800CD9E41 /* Background.mp4 */,
 				C8874E1C1FAEA1DE008A80C8 /* AppDelegate.swift */,
 				C8874E231FAEA1DE008A80C8 /* Assets.xcassets */,
 				C8874E281FAEA1DE008A80C8 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C89D8A961FAEBD3600CD9E41 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C89D8A971FAEBD4A00CD9E41 /* UIViewController+AlertView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,7 +205,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C89D8A901FAEA93200CD9E41 /* Montserrat in Resources */,
 				C8874E271FAEA1DE008A80C8 /* LaunchScreen.storyboard in Resources */,
+				C89D8A8E1FAEA57900CD9E41 /* Background.mp4 in Resources */,
 				C8874E241FAEA1DE008A80C8 /* Assets.xcassets in Resources */,
 				C8874E221FAEA1DE008A80C8 /* Main.storyboard in Resources */,
 			);
@@ -249,6 +274,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C89D8A941FAEAFF100CD9E41 /* LoginViewController.swift in Sources */,
+				C89D8A921FAEAE5400CD9E41 /* SignUpViewController.swift in Sources */,
+				C89D8A981FAEBD4A00CD9E41 /* UIViewController+AlertView.swift in Sources */,
 				C8874E1D1FAEA1DE008A80C8 /* AppDelegate.swift in Sources */,
 				C8874E331FAEA30C008A80C8 /* SplashViewController.swift in Sources */,
 			);
