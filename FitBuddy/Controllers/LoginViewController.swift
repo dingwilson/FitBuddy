@@ -16,6 +16,8 @@ class LoginViewController: UIViewController {
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
+    
+    var room: String?
 
     override var prefersStatusBarHidden: Bool {
         return true
@@ -68,6 +70,14 @@ class LoginViewController: UIViewController {
     @IBAction func didPressBackButton(_ sender: Any) {
         performSegue(withIdentifier: "unwindToVC", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToExerciseVC" {
+            let destinationViewController = segue.destination as! ExerciseViewController
+            
+            destinationViewController.room = room
+        }
+    }
 }
 
 extension LoginViewController : AVCaptureMetadataOutputObjectsDelegate {
@@ -87,7 +97,9 @@ extension LoginViewController : AVCaptureMetadataOutputObjectsDelegate {
             if metadataObj.stringValue != nil {
                 captureSession?.stopRunning()
 
-                print(metadataObj.stringValue!)
+                room = metadataObj.stringValue!
+                let userName = UserDefaults.standard.object(forKey: "userName") as? String
+                print("username: " + userName! + " - " + room!)
 
                 performSegue(withIdentifier: "segueToExerciseVC", sender: self)
             }
